@@ -1,0 +1,22 @@
+name: Build and Upload to Sofy
+
+on:
+  workflow_dispatch: # This allows you to manually trigger the workflow
+
+jobs:
+  Uploading-job:
+    name: 'Upload build on Sofy'
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository code
+      - name: 'Checkout code'
+        uses: 'actions/checkout@v2'
+
+      # Upload the build to Sofy
+      - name: 'Upload build to Sofy'
+        uses: 'SOFYDEVELOPER/sofy-app-upload-github-action@main'
+        env:
+          build_path: 'src/builds/build.apk' # Updated with your actual build path
+          subscription_key: CA8FBEDA-5CA6-4B3D-B661-D3B79DDAC298
+          application_guid: F3504934-3567-4F89-A344-496ED4C7F882
