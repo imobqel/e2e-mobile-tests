@@ -1,4 +1,4 @@
-name: Build and Upload to Sofy
+name: Upload Build 24.41(244116)
 
 on:
   workflow_dispatch: # This allows you to manually trigger the workflow
