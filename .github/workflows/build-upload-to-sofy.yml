@@ -1,4 +1,4 @@
-name: Build SuperApp Android QA App 24.42(244211)
+name: Build & Upload SuperApp Android QA App 24.42(244211)
 
 on:
   workflow_dispatch: # This allows you to manually trigger the workflow
