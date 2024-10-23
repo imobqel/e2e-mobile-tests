@@ -5,7 +5,7 @@ on:
 
 jobs:
   Uploading-job:
-    name: 'Upload build on Sofy'
+    name: 'Upload build to Sofy'
     runs-on: ubuntu-latest
 
     steps:
@@ -13,8 +13,16 @@ jobs:
       - name: 'Checkout code'
         uses: 'actions/checkout@v2'
 
-      # Upload the build to Sofy
-      - name: 'Upload build to Sofy'
+      # Build Genearation
+      - name: 'Build Genearation'
+        uses: 'SOFYDEVELOPER/sofy-app-upload-github-action@main'
+        env:
+          build_path: 'src/builds/supa-user-debug-qa-24.41.apk' # Updated with your actual build path
+          subscription_key: CA8FBEDA-5CA6-4B3D-B661-D3B79DDAC298
+          application_guid: F3504934-3567-4F89-A344-496ED4C7F882
+
+      # Upload Build to Sofy
+      - name: 'Upload Build to Sofy'
         uses: 'SOFYDEVELOPER/sofy-app-upload-github-action@main'
         env:
           build_path: 'src/builds/supa-user-debug-qa-24.41.apk' # Updated with your actual build path
